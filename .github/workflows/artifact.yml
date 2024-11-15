@@ -22,6 +22,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: created directory
+        run: mkdir artifacts
+        
       - name: download file hello.txt
         uses: actions/download-artifact@v4
         with:
